@@ -3,22 +3,29 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
 </head>
 <body>
 
 	<script type="text/javascript">
 
-		var q;
-		var begin_date;
-		var end_date;
-		 
+		var q = $("#keyword").val();
+		var begin_date = $("#begin-date").val();
+		var end_date = $("#end-date").val();
+		var articlePageChoice = [Math.floor(Math.random() * 10)];
+		var articleChoice = [Math.floor(Math.random() * 10)];
+
 		// Built by LucyBot. www.lucybot.com
 		var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 		url += '?' + $.param({
 		  'api-key': "9789e761c56e41a5b931134117fdf694",
-		  'q': "Trump",
-		  'begin_date': "20161115",
-		  'end_date': "20170927"
+		  'q': q,
+		  'begin_date': begin_date,
+		  'end_date': end_date,
+		  'page': articlePageChoice
 		});
 
 		$.ajax({
@@ -30,11 +37,10 @@
 		  throw err;
 		});
 
-		$.ajax({
-        url: queryURL,
-        method: "GET"
-      }).done(function(response) {
-      });
+		console.log(url);
+		console.log(result);
+
+
 	</script>
 	
 </body>
