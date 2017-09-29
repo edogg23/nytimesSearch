@@ -4,12 +4,51 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 
+<<<<<<< HEAD
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  
+=======
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+>>>>>>> e20bd87e6426024a49ac46cbf51aac3b1fee92e6
 </head>
 <body>
 
 	<script type="text/javascript">
+<<<<<<< HEAD
 	
+=======
+
+		var q = $("#keyword").val();
+		var begin_date = $("#begin-date").val();
+		var end_date = $("#end-date").val();
+		var articlePageChoice = [Math.floor(Math.random() * 10)];
+		var articleChoice = [Math.floor(Math.random() * 10)];
+
+		// Built by LucyBot. www.lucybot.com
+		var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+		url += '?' + $.param({
+		  'api-key': "9789e761c56e41a5b931134117fdf694",
+		  'q': q,
+		  'begin_date': begin_date,
+		  'end_date': end_date,
+		  'page': articlePageChoice
+		});
+
+		$.ajax({
+		  url: url,
+		  method: 'GET',
+		}).done(function(result) {
+		  console.log(result);
+		}).fail(function(err) {
+		  throw err;
+		});
+
+		console.log(url);
+		console.log(result);
+
+
+>>>>>>> e20bd87e6426024a49ac46cbf51aac3b1fee92e6
 	</script>
 
 	<div class="container">
