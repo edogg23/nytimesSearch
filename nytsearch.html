@@ -12,41 +12,7 @@
 </head>
 <body>
 
-	<script type="text/javascript">
 
-	$(".submit").on("click", function(){
-
-
-
-		var q = $("#keyword").val();
-		var begin_date = $("#begin-date").val();
-		var end_date = $("#end-date").val();
-		var articlePageChoice = [Math.floor(Math.random() * 10)];
-		var articleChoice = [Math.floor(Math.random() * 10)];
-
-		// Built by LucyBot. www.lucybot.com
-		var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-		url += '?' + $.param({
-		  'api-key': "9789e761c56e41a5b931134117fdf694",
-		  'q': q,
-		  'begin_date': begin_date,
-		  'end_date': end_date,
-		  'page': articlePageChoice
-		});
-
-		$.ajax({
-		  url: url,
-		  method: 'GET',
-		}).done(function(result) {
-		  console.log(result);
-		}).fail(function(err) {
-		  throw err;
-		});
-
-		console.log(url);
-		console.log(result);
-	})
-	</script>
 
 	<div class="container">
 		<div class="jumbotron">	
@@ -55,7 +21,8 @@
 		
 	</div>
 
-	<div id="search" class="panel-heading">
+	<div id="search" class="panel panel-default panel-heading ">
+	<h3>Search Parameters</h3> 
 		<div class="panel-body">
 			<form>
 				
@@ -81,12 +48,48 @@
 			</form>
 			
 		</div>
-		
-	</div>
+	</div>	
+	
 
 	<div id="topArticles">
 		
 	</div>
+	<script type="text/javascript">
+
+	$(".submit").on("click", function(event){
+
+		event.preventDefault();
+
+		var q = $("#keyword").val();
+		var begin_date = $("#begin-date").val();
+		var end_date = $("#end-date").val();
+		var articlePageChoice = [Math.floor(Math.random() * 10)];
+		var articleChoice = [Math.floor(Math.random() * 10)];
+		console.log("click");
+
+		// Built by LucyBot. www.lucybot.com
+		var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+		url += '?' + $.param({
+		  'api-key': "9789e761c56e41a5b931134117fdf694",
+		  'q': q,
+		  'begin_date': begin_date,
+		  'end_date': end_date,
+		  'page': articlePageChoice
+		});
+
+		$.ajax({
+		  url: url,
+		  method: 'GET',
+		}).done(function(result) {
+		  console.log(result);
+		}).fail(function(err) {
+		  throw err;
+		});
+
+		console.log(url);
+		console.log(result);
+	})
+	</script>
 	
 </body>
 </htm
