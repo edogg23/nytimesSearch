@@ -4,20 +4,19 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 
-<<<<<<< HEAD
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  
-=======
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 
->>>>>>> e20bd87e6426024a49ac46cbf51aac3b1fee92e6
 </head>
 <body>
 
 	<script type="text/javascript">
-<<<<<<< HEAD
-	
-=======
+
+	$(".submit").on("click", function(){
+
+
 
 		var q = $("#keyword").val();
 		var begin_date = $("#begin-date").val();
@@ -46,9 +45,7 @@
 
 		console.log(url);
 		console.log(result);
-
-
->>>>>>> e20bd87e6426024a49ac46cbf51aac3b1fee92e6
+	})
 	</script>
 
 	<div class="container">
@@ -64,15 +61,15 @@
 				
 				  <div class="form-group">
 				    <label for="search">Search Term</label>
-				    <input type="search" class="form-control" id="search-term" placeholder="">
+				    <input type="search" class="form-control" id="keyword" placeholder="">
 				  </div>
 				  <div class="form-group">
 				    <label for="start-year">Start Year</label>
-				    <input type="search" class="form-control" id="start-year" placeholder="">
+				    <input type="search" class="form-control" id="begin-date" placeholder="">
 				  </div>
 				  <div class="form-group">
 				    <label for="end-year">End Year</label>
-				    <input type="search" class="form-control" id="end-year" placeholder="">
+				    <input type="search" class="form-control" id="end-date" placeholder="">
 				  </div>
 				 
 				 
